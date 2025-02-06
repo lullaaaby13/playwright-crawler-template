@@ -1,3 +1,15 @@
 {
-  "extends": "./.quasar/tsconfig.json"
+    "extends": "./.quasar/tsconfig.json",
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "strictPropertyInitialization": false,
+    },
+  "include": [
+    "type/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src-electron/**/*.ts",
+    "src-electron/**/*.d.ts",
+  ]
 }

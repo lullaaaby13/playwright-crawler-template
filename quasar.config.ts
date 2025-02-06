@@ -2,6 +2,7 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 
 import { defineConfig } from '#q-app/wrappers';
+import { QuasarResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig((/* ctx */) => {
   return {
@@ -65,10 +66,25 @@ export default defineConfig((/* ctx */) => {
 
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
-      
-      // vitePlugins: [
-      //   [ 'package-name', { ..pluginOptions.. }, { server: true, client: true } ]
-      // ]
+
+      vitePlugins: [
+        // [ 'package-name', { ..pluginOptions.. }, { server: true, client: true } ]
+        [
+          'unplugin-vue-components/vite',
+          {
+            resolvers: [QuasarResolver()],
+            dts: 'src/components.d.ts', // Path to the generated TypeScript declarations
+            include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+          },
+        ],
+        [
+          'unplugin-auto-import/vite',
+          {
+            imports: ['vue', 'vue-router'],
+            dts: 'src/auto-imports.d.ts', // Path to the generated TypeScript declarations
+          },
+        ],
+      ]
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#devserver

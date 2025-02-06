@@ -31,3 +31,10 @@ yarn-error.log*
 
 # local .env files
 .env.local*
+
+images
+/prisma/migrations
+/prisma/dev.db
+
+/src/auto-imports.d.ts
+/src/components.d.ts

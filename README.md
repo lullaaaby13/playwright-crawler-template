@@ -1,24 +1,13 @@
-# Quasar App (quasar-electron)
+# Playwright를 활용한 크롤러 예제
 
-A Quasar Project
+---
 
-## Install the dependencies
+## 1. Feature
+
+- Playwright를 활용한 데이터 수집
+- Electron + Vue3 + Quasar.js를 활용한 UI
+## 2. Installation
+
 ```bash
-yarn
-# or
-npm install
+$ yarn install
 ```
-
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).

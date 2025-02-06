@@ -1,5 +1,5 @@
 {
-  "name": "quasar-electron",
+  "name": "playweight-crawler-template",
   "version": "0.0.1",
   "description": "A Quasar Project",
   "productName": "Quasar App",
@@ -7,24 +7,46 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0",
-    "dev": "quasar dev",
-    "build": "quasar build",
-    "postinstall": "quasar prepare"
+    "dev": "quasar dev -m electron",
+    "build": "quasar build -m electron",
+    "postinstall": "quasar prepare",
+    "migrate": "prisma migrate dev",
+    "clear-cache": "rm -rf node_modules/.vite dist && yarn install"
   },
   "dependencies": {
-    "axios": "^1.2.1",
-    "pinia": "^2.0.11",
+    "@mikro-orm/core": "^6.4.4",
+    "@mikro-orm/nestjs": "^6.1.0",
+    "@mikro-orm/sqlite": "^6.4.4",
+    "@prisma/client": "^6.3.0",
     "@quasar/extras": "^1.16.4",
+    "app-root-path": "^3.1.0",
+    "axios": "^1.2.1",
+    "cheerio": "^1.0.0",
+    "electron": "^34.0.1",
+    "exceljs": "^4.4.0",
+    "pinia": "^2.0.11",
+    "playwright": "^1.50.0",
+    "playwright-extra": "^4.3.6",
+    "prisma": "^6.3.0",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "quasar": "^2.16.0",
+    "rxjs": "^7.8.1",
+    "uuid": "^11.0.5",
     "vue": "^3.4.18",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
-    "@types/node": "^20.5.9",
+    "@electron/packager": "^18.3.2",
     "@quasar/app-vite": "^2.0.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.5.9",
+    "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.2",
-    "typescript": "~5.5.3"
+    "jsdom": "^26.0.0",
+    "typescript": "~5.5.3",
+    "unplugin-auto-import": "^19.0.0",
+    "unplugin-vue-components": "^28.0.0",
+    "vitest": "^3.0.4"
   },
   "engines": {
     "node": "^28 || ^26 || ^24 || ^22 || ^20 || ^18",
